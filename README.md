@@ -4,3 +4,12 @@
 ![](https://img.shields.io/badge/Gradle-5.6.4-green)
 
 Completion work on object-oriented programming
+
+### How to Run
+- execute the following commands
+
+    ```
+    git clone https://github.com/thiago-rezende/generic-linked-list-java.git
+    cd generic-linked-list-java
+    ./gradlew run --console=plain
+    ```
