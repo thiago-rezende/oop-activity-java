@@ -1,2 +1,2 @@
-# oop-activity-java
+# Object Oriented Programming Activity Java
 Completion work on object-oriented programming
