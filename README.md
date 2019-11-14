@@ -9,8 +9,8 @@ Completion work on object-oriented programming
 - execute the following commands
 
     ```
-    git clone https://github.com/thiago-rezende/generic-linked-list-java.git
-    cd generic-linked-list-java
+    git clone https://github.com/thiago-rezende/oop-activity-java.git
+    cd oop-activity-java
     ./gradlew run --console=plain
     ```
 ## Contributors
