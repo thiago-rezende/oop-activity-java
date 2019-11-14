@@ -5,14 +5,14 @@ package app;
  * 
  * @author Thiago Rezende
  */
-class Vec3f {
+public class Vec3f {
 
     public float x;
     public float y;
     public float z;
 
     /**
-     * Constructor
+     * Default constructor
      */
     public Vec3f() {
         this.x = 0.0f;
