@@ -1,3 +1,5 @@
+package app;
+
 import java.util.List;
 import java.util.ArrayList;
 import java.time.LocalDate;
@@ -14,7 +16,7 @@ public class Student {
         m_registration = 0;
         m_name = "UNKNOWN";
         m_course = null;
-        m_enrolledSubjects = null;
+        m_enrolledSubjects = new ArrayList<EnrolledSubject>();
         m_dateOfEntry = null;
         m_dateOfCompletion = null;
     }
@@ -85,8 +87,8 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Registration: " + m_registration + "Name: " + this.getName() + "Course: " + this.getCourse()
-                + "Date of entry: " + this.getDateOfEntry() + "Date of completion: "
-                + (this.getDateOfCompletion() != null ? "In Progress" : this.getDateOfCompletion());
+        return "Student {Registration: " + m_registration + ", Name: " + this.getName() + ", Course: "
+                + this.getCourse() + ", Date of entry: " + this.getDateOfEntry() + ", Date of completion: "
+                + (this.getDateOfCompletion() != null ? "In Progress" : this.getDateOfCompletion()) + "}";
     }
 }
