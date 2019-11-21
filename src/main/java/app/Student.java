@@ -25,11 +25,27 @@ public class Student {
         m_registration = registration;
         m_name = name;
         m_course = course;
-        // TODO: add all the subjects from the course
-        m_enrolledSubjects = null;
+        m_enrolledSubjects = new ArrayList<EnrolledSubject>();
+
+        for (Subject subject : m_course.getSubjects())
+            m_enrolledSubjects.add(new EnrolledSubject(subject));
+
         m_dateOfEntry = LocalDate.now();
         m_dateOfCompletion = null;
     }
+
+    /*
+     * TODO: functionality public float getAcademicPerformanceCoefficient() {
+     * 
+     * }
+     */
+
+    /*
+     * TODO: functionality, IncompleteCourseException public String
+     * getCertificateOfCompletion() {
+     * 
+     * }
+     */
 
     public int getRegistration() {
         return m_registration;

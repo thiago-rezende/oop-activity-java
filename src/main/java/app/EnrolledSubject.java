@@ -24,6 +24,10 @@ public class EnrolledSubject {
         m_grade = 0;
     }
 
+    public boolean getApprovalStatus() {
+        return this.getGrade() >= 60;
+    }
+
     public Subject getSubject() {
         return m_subject;
     }
