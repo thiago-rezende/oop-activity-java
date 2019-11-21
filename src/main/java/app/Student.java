@@ -50,14 +50,13 @@ public class Student {
     }
 
     /*
-     * TODO: functionality public float getAcademicPerformanceCoefficient() {
+     * TODO: public float getAcademicPerformanceCoefficient() {
      * 
      * }
      */
 
     /*
-     * TODO: functionality, IncompleteCourseException public String
-     * getCertificateOfCompletion() {
+     * TODO: public String getCertificateOfCompletion() {
      * 
      * }
      */
