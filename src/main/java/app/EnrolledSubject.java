@@ -37,7 +37,6 @@ public class EnrolledSubject {
      * Constructor (set to 0)
      * 
      * @param subject Subject
-     * @return
      */
     public EnrolledSubject(Subject subject) {
         m_subject = subject;

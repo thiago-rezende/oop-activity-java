@@ -93,7 +93,7 @@ public class Course {
     /**
      * Course subjects getter
      * 
-     * @return List<Subject> Course subjects
+     * @return List Course subjects
      */
     public List<Subject> getSubjects() {
         return m_subjects;

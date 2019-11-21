@@ -119,7 +119,7 @@ public class Student {
     /**
      * EnrolledSubjects getter
      * 
-     * @return List<EnrolledSubject>
+     * @return List EnrolledSubjects
      */
     public List<EnrolledSubject> getEnrolledSubjects() {
         return m_enrolledSubjects;
