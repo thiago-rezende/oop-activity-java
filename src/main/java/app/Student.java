@@ -4,6 +4,11 @@ import java.util.List;
 import java.util.ArrayList;
 import java.time.LocalDate;
 
+/**
+ * Student
+ * 
+ * @author Thiago Rezende
+ */
 public class Student {
     private int m_registration;
     private String m_name;
@@ -12,6 +17,9 @@ public class Student {
     private LocalDate m_dateOfEntry;
     private LocalDate m_dateOfCompletion;
 
+    /**
+     * Default constructor
+     */
     public Student() {
         m_registration = 0;
         m_name = "UNKNOWN";
@@ -21,6 +29,13 @@ public class Student {
         m_dateOfCompletion = null;
     }
 
+    /**
+     * Complete constructor
+     * 
+     * @param registration Registration numebr
+     * @param name         Student name
+     * @param course       Course
+     */
     public Student(int registration, String name, Course course) {
         m_registration = registration;
         m_name = name;
@@ -47,60 +62,131 @@ public class Student {
      * }
      */
 
+    /**
+     * Registration getter
+     * 
+     * @return int Registration number
+     */
     public int getRegistration() {
         return m_registration;
     }
 
+    /**
+     * Registration setter
+     * 
+     * @param registration Registration number
+     */
     public void setRegistration(int registration) {
         m_registration = registration;
     }
 
+    /**
+     * Student name getter
+     * 
+     * @return String Student name
+     */
     public String getName() {
         return m_name;
     }
 
+    /**
+     * Studnet name setter
+     * 
+     * @param name Student name
+     */
     public void setName(String name) {
         m_name = name;
     }
 
+    /**
+     * Course getter
+     * 
+     * @return Course Course
+     */
     public Course getCourse() {
         return m_course;
     }
 
+    /**
+     * Course setter
+     * 
+     * @param course Course to set
+     */
     public void setCourse(Course course) {
         m_course = course;
     }
 
+    /**
+     * EnrolledSubjects getter
+     * 
+     * @return List<EnrolledSubject>
+     */
     public List<EnrolledSubject> getEnrolledSubjects() {
         return m_enrolledSubjects;
     }
 
+    /**
+     * EnrolledSubjects setter
+     * 
+     * @param enrolledSubjects EnrolledSubjects to set
+     */
     public void getEnrolledSubjects(List<EnrolledSubject> enrolledSubjects) {
         m_enrolledSubjects = enrolledSubjects;
     }
 
+    /**
+     * Date of entry getter
+     * 
+     * @return LocalDate Date of entry
+     */
     public LocalDate getDateOfEntry() {
         return m_dateOfEntry;
     }
 
+    /**
+     * Date of entry setter
+     * 
+     * @param dateOfEntry Date to set
+     */
     public void setDateOfEntry(LocalDate dateOfEntry) {
         m_dateOfEntry = dateOfEntry;
     }
 
+    /**
+     * Date of completion getter
+     * 
+     * @return LocalDate Date of completion
+     */
     public LocalDate getDateOfCompletion() {
         return m_dateOfCompletion;
     }
 
+    /**
+     * Date of completion setter
+     * 
+     * @param dateOfCompletion Date to set
+     */
     public void setDateOfCompletion(LocalDate dateOfCompletion) {
         m_dateOfCompletion = dateOfCompletion;
     }
 
+    /**
+     * Equals
+     * 
+     * @param obj Object to compare
+     * @return boolean Result
+     */
     @Override
     public boolean equals(Object obj) {
         Student other = (Student) obj;
         return this.getRegistration() == other.getRegistration();
     }
 
+    /**
+     * To string
+     * 
+     * @return String String with object's information
+     */
     @Override
     public String toString() {
         return "Student {Registration: " + m_registration + ", Name: " + this.getName() + ", Course: "
