@@ -37,3 +37,13 @@ test {
     // Use TestNG for unit tests
     useTestNG()
 }
+
+task copyDocsDirForArchiving(type: Copy) {
+    from "$buildDir/docs/javadoc"
+    into "$projectDir/docs"
+}
+
+task docs {
+    dependsOn javadoc
+    dependsOn copyDocsDirForArchiving
+}
