@@ -1,11 +1,14 @@
 package app;
 
+import java.io.Serializable;
+
 /**
  * Simple 3D Vector implementation
  * 
  * @author Thiago Rezende
  */
-public class Vec3f {
+@SuppressWarnings("serial")
+public class Vec3f implements Serializable {
 
     public float x;
     public float y;

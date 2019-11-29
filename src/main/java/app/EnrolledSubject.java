@@ -1,5 +1,6 @@
 package app;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
 /**
@@ -7,7 +8,8 @@ import java.time.LocalDate;
  * 
  * @author Thiago Rezende
  */
-public class EnrolledSubject {
+@SuppressWarnings("serial")
+public class EnrolledSubject implements Serializable {
 
     private Subject m_subject;
     private float m_grade;

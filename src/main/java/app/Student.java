@@ -2,6 +2,7 @@ package app;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.io.Serializable;
 import java.time.LocalDate;
 
 /**
@@ -9,7 +10,9 @@ import java.time.LocalDate;
  * 
  * @author Thiago Rezende
  */
-public class Student {
+@SuppressWarnings("serial")
+public class Student implements Serializable {
+
     private int m_registration;
     private String m_name;
     private Course m_course;

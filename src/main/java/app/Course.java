@@ -1,6 +1,7 @@
 package app;
 
 import java.util.List;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
@@ -8,7 +9,8 @@ import java.util.ArrayList;
  * 
  * @author Thiago Rezende
  */
-public class Course {
+@SuppressWarnings("serial")
+public class Course implements Serializable {
 
     private String m_title;
     private int m_level;

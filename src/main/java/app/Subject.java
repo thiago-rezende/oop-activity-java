@@ -1,11 +1,14 @@
 package app;
 
+import java.io.Serializable;
+
 /**
  * Subject
  * 
  * @author Thiago Rezende
  */
-public class Subject {
+@SuppressWarnings("serial")
+public class Subject implements Serializable {
 
     private String m_name;
     private int m_period;
