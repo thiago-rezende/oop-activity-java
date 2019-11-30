@@ -48,8 +48,9 @@ public class Student implements Serializable {
         m_course = course;
         m_enrolledSubjects = new ArrayList<EnrolledSubject>();
 
-        for (Subject subject : m_course.getSubjects())
-            m_enrolledSubjects.add(new EnrolledSubject(subject));
+        // Automatic subject enrollement
+        // for (Subject subject : m_course.getSubjects())
+        // m_enrolledSubjects.add(new EnrolledSubject(subject));
 
         m_dateOfEntry = LocalDate.now();
         m_dateOfCompletion = null;
@@ -87,8 +88,10 @@ public class Student implements Serializable {
             if (!subject.getApprovalStatus())
                 throw new IncompleteCourseException("Insufficient grades!");
 
+        this.setDateOfCompletion(LocalDate.now());
+
         return "Cetificate of Conclusion\n" + "We certify that" + this.getName() + "has completed the course of "
-                + this.getCourse().getTitle();
+                + this.getCourse().getTitle() + " on " + this.getDateOfCompletion();
     }
 
     /**
