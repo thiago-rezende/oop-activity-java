@@ -57,6 +57,31 @@ public class Course implements Serializable {
     }
 
     /**
+     * Add subject to the course
+     * 
+     * @param subject Subject to be added
+     */
+    public void addSubject(Subject subject) {
+        m_subjects.add(subject);
+    }
+
+    /**
+     * Remove subject from the course
+     * 
+     * @param subjectName Name of the Subject to be removed
+     * @return boolean status
+     */
+    public boolean removeSubject(String subjectName) {
+        for (int i = 0; i < m_subjects.size(); i++)
+            if (m_subjects.get(i).getName().equals(subjectName)) {
+                m_subjects.remove(i);
+                return true;
+            }
+
+        return false;
+    }
+
+    /**
      * Course title getter
      * 
      * @return String Course title

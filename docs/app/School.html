@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -73,13 +73,13 @@ var activeTableTab = "activeTableTab";
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
@@ -125,6 +125,25 @@ implements java.io.Serializable</pre>
 <div class="summary">
 <ul class="blockList">
 <li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../app/School.html#m_registartionCounter">m_registartionCounter</a></span></code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <ul class="blockList">
 <li class="blockList"><a name="constructor.summary">
@@ -157,24 +176,49 @@ implements java.io.Serializable</pre>
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../app/School.html#addCourse-app.Course-">addCourse</a></span>(<a href="../app/Course.html" title="class in app">Course</a>&nbsp;course)</code>
+<div class="block">Add a course</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../app/School.html#addStudent-app.Student-">addStudent</a></span>(<a href="../app/Student.html" title="class in app">Student</a>&nbsp;student)</code>
+<div class="block">Add a student</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>java.util.List&lt;<a href="../app/Course.html" title="class in app">Course</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../app/School.html#getCourses--">getCourses</a></span>()</code>
 <div class="block">School courses getter</div>
 </td>
 </tr>
-<tr id="i1" class="rowColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>java.util.List&lt;<a href="../app/Student.html" title="class in app">Student</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../app/School.html#getStudents--">getStudents</a></span>()</code>
 <div class="block">School Students getter</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../app/School.html#removeCourse-java.lang.String-int-">removeCourse</a></span>(java.lang.String&nbsp;courseTitle,
+            int&nbsp;courseLevel)</code>
+<div class="block">Remove a course</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../app/School.html#removeStudent-int-">removeStudent</a></span>(int&nbsp;registration)</code>
+<div class="block">Remove a student</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../app/School.html#setCourses-java.util.List-">setCourses</a></span>(java.util.List&lt;<a href="../app/Course.html" title="class in app">Course</a>&gt;&nbsp;courses)</code>
 <div class="block">School courses setter</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../app/School.html#setStudents-java.util.List-">setStudents</a></span>(java.util.List&lt;<a href="../app/Student.html" title="class in app">Student</a>&gt;&nbsp;students)</code>
 <div class="block">School students setter</div>
@@ -196,6 +240,23 @@ implements java.io.Serializable</pre>
 <div class="details">
 <ul class="blockList">
 <li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="m_registartionCounter">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>m_registartionCounter</h4>
+<pre>public&nbsp;int m_registartionCounter</pre>
+</li>
+</ul>
+</li>
+</ul>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <ul class="blockList">
 <li class="blockList"><a name="constructor.detail">
@@ -220,6 +281,68 @@ implements java.io.Serializable</pre>
 <!--   -->
 </a>
 <h3>Method Detail</h3>
+<a name="addStudent-app.Student-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addStudent</h4>
+<pre>public&nbsp;void&nbsp;addStudent(<a href="../app/Student.html" title="class in app">Student</a>&nbsp;student)</pre>
+<div class="block">Add a student</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>student</code> - student to be added</dd>
+</dl>
+</li>
+</ul>
+<a name="removeStudent-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>removeStudent</h4>
+<pre>public&nbsp;boolean&nbsp;removeStudent(int&nbsp;registration)</pre>
+<div class="block">Remove a student</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>registration</code> - Registration of the student</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>boolean Status</dd>
+</dl>
+</li>
+</ul>
+<a name="addCourse-app.Course-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addCourse</h4>
+<pre>public&nbsp;void&nbsp;addCourse(<a href="../app/Course.html" title="class in app">Course</a>&nbsp;course)</pre>
+<div class="block">Add a course</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>course</code> - Course to be added</dd>
+</dl>
+</li>
+</ul>
+<a name="removeCourse-java.lang.String-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>removeCourse</h4>
+<pre>public&nbsp;boolean&nbsp;removeCourse(java.lang.String&nbsp;courseTitle,
+                            int&nbsp;courseLevel)</pre>
+<div class="block">Remove a course</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>courseTitle</code> - Course title</dd>
+<dd><code>courseLevel</code> - Course level</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>boolean Status</dd>
+</dl>
+</li>
+</ul>
 <a name="getCourses--">
 <!--   -->
 </a>
@@ -329,13 +452,13 @@ implements java.io.Serializable</pre>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>

@@ -33,6 +33,7 @@ public class EnrolledSubject implements Serializable {
     public EnrolledSubject(Subject subject, int grade) {
         m_subject = subject;
         m_grade = grade;
+        m_dateOfRegistration = LocalDate.now();
     }
 
     /**
@@ -43,6 +44,7 @@ public class EnrolledSubject implements Serializable {
     public EnrolledSubject(Subject subject) {
         m_subject = subject;
         m_grade = 0;
+        m_dateOfRegistration = LocalDate.now();
     }
 
     /**
