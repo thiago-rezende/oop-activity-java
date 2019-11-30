@@ -1,6 +1,9 @@
 package app;
 
 import java.util.List;
+
+import exceptions.IncompleteCourseException;
+
 import java.util.ArrayList;
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -58,11 +61,17 @@ public class Student implements Serializable {
      * }
      */
 
-    /*
-     * TODO: public String getCertificateOfCompletion() {
-     * 
-     * }
-     */
+    public String getCertificateOfCompletion() throws IncompleteCourseException {
+        if (m_enrolledSubjects.size() < m_course.getSubjects().size())
+            throw new IncompleteCourseException("Did not complete all registrations!");
+
+        for (EnrolledSubject subject : m_enrolledSubjects)
+            if (!subject.getApprovalStatus())
+                throw new IncompleteCourseException("Insufficient grades!");
+
+        return "Cetificate of Conclusion\n" + "We certify that" + this.getName() + "has completed the course of "
+                + this.getCourse().getTitle();
+    }
 
     /**
      * Add an EnrolledSubject
