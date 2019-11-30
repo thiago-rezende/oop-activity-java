@@ -55,12 +55,30 @@ public class Student implements Serializable {
         m_dateOfCompletion = null;
     }
 
-    /*
-     * TODO: public float getAcademicPerformanceCoefficient() {
+    /**
+     * Get academic performace coefficient
      * 
-     * }
+     * @return float academic performace coefficient
      */
+    public float getAcademicPerformanceCoefficient() {
+        // APC = ((Cd1*N1) + ... + (Cdn*Nn)) / (Cd1 + ... + Cdn)
+        float numerator = 0.0f;
+        float denominator = 0.0f;
 
+        for (EnrolledSubject subject : m_enrolledSubjects) {
+            numerator += subject.getSubject().getValueInCredits() * subject.getGrade();
+            denominator += subject.getSubject().getValueInCredits();
+        }
+
+        return numerator / denominator;
+    }
+
+    /**
+     * Get certificate of conclusion
+     * 
+     * @return String Certificate
+     * @throws IncompleteCourseException
+     */
     public String getCertificateOfCompletion() throws IncompleteCourseException {
         if (m_enrolledSubjects.size() < m_course.getSubjects().size())
             throw new IncompleteCourseException("Did not complete all registrations!");
