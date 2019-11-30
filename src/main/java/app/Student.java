@@ -98,7 +98,7 @@ public class Student implements Serializable {
      * Get certificate of conclusion
      * 
      * @return String Certificate
-     * @throws IncompleteCourseException
+     * @throws IncompleteCourseException Incomplete course
      */
     public String getCertificateOfCompletion() throws IncompleteCourseException {
         if (m_enrolledSubjects.size() < m_course.getSubjects().size())

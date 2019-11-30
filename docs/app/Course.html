@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -172,48 +172,60 @@ implements java.io.Serializable</pre>
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../app/Course.html#addSubject-app.Subject-">addSubject</a></span>(<a href="../app/Subject.html" title="class in app">Subject</a>&nbsp;subject)</code>
+<div class="block">Add subject to the course</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../app/Course.html#equals-java.lang.Object-">equals</a></span>(java.lang.Object&nbsp;obj)</code>
 <div class="block">Equals</div>
 </td>
 </tr>
-<tr id="i1" class="rowColor">
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../app/Course.html#getLevel--">getLevel</a></span>()</code>
 <div class="block">Course level getter</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>java.util.List&lt;<a href="../app/Subject.html" title="class in app">Subject</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../app/Course.html#getSubjects--">getSubjects</a></span>()</code>
 <div class="block">Course subjects getter</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../app/Course.html#getTitle--">getTitle</a></span>()</code>
 <div class="block">Course title getter</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../app/Course.html#removeSubject-java.lang.String-">removeSubject</a></span>(java.lang.String&nbsp;subjectName)</code>
+<div class="block">Remove subject from the course</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../app/Course.html#setLevel-int-">setLevel</a></span>(int&nbsp;level)</code>
 <div class="block">Course level setter</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../app/Course.html#setSubjects-java.util.List-">setSubjects</a></span>(java.util.List&lt;<a href="../app/Subject.html" title="class in app">Subject</a>&gt;&nbsp;subjects)</code>
 <div class="block">Course subjects setter</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../app/Course.html#setTitle-java.lang.String-">setTitle</a></span>(java.lang.String&nbsp;title)</code>
 <div class="block">Course title setter</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../app/Course.html#toString--">toString</a></span>()</code>
 <div class="block">To string</div>
@@ -297,6 +309,36 @@ implements java.io.Serializable</pre>
 <!--   -->
 </a>
 <h3>Method Detail</h3>
+<a name="addSubject-app.Subject-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addSubject</h4>
+<pre>public&nbsp;void&nbsp;addSubject(<a href="../app/Subject.html" title="class in app">Subject</a>&nbsp;subject)</pre>
+<div class="block">Add subject to the course</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>subject</code> - Subject to be added</dd>
+</dl>
+</li>
+</ul>
+<a name="removeSubject-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>removeSubject</h4>
+<pre>public&nbsp;boolean&nbsp;removeSubject(java.lang.String&nbsp;subjectName)</pre>
+<div class="block">Remove subject from the course</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>subjectName</code> - Name of the Subject to be removed</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>boolean status</dd>
+</dl>
+</li>
+</ul>
 <a name="getTitle--">
 <!--   -->
 </a>

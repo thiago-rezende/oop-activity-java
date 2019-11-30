@@ -68,7 +68,7 @@ public class Course implements Serializable {
     /**
      * Remove subject from the course
      * 
-     * @param subject Name of the Subject to be removed
+     * @param subjectName Name of the Subject to be removed
      * @return boolean status
      */
     public boolean removeSubject(String subjectName) {
