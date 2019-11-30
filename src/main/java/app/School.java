@@ -1,6 +1,9 @@
 package app;
 
 import java.util.List;
+
+import exceptions.NotFoundException;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -12,15 +15,17 @@ import java.util.ArrayList;
 @SuppressWarnings("serial")
 public class School implements Serializable {
 
-    public int m_registartionCounter;
+    private int m_registartionCounter;
+    private String m_name;
     private List<Course> m_courses;
     private List<Student> m_students;
 
     /**
      * Default constructor
      */
-    public School() {
+    public School(String name) {
         m_registartionCounter = 0;
+        m_name = name;
         m_courses = new ArrayList<Course>();
         m_students = new ArrayList<Student>();
     }
@@ -80,6 +85,24 @@ public class School implements Serializable {
     }
 
     /**
+     * School name getter
+     * 
+     * @return String School name
+     */
+    public String getName() {
+        return m_name;
+    }
+
+    /**
+     * School name setter
+     * 
+     * @param name School name
+     */
+    public void setName(String name) {
+        m_name = name;
+    }
+
+    /**
      * School courses getter
      * 
      * @return List School courses
@@ -98,6 +121,19 @@ public class School implements Serializable {
     }
 
     /**
+     * School Student getter
+     * 
+     * @return Student School student
+     */
+    public Student getStudent(int registration) throws NotFoundException {
+        for (Student student : m_students)
+            if (student.getRegistration() == registration)
+                return student;
+
+        throw new NotFoundException("Student Not Found!");
+    }
+
+    /**
      * School Students getter
      * 
      * @return List School students
@@ -113,5 +149,22 @@ public class School implements Serializable {
      */
     public void setStudents(List<Student> students) {
         m_students = students;
+    }
+
+    @Override
+    public String toString() {
+        String out = "-- " + this.getName() + " -- \n - Courses:\n";
+        for (Course course : m_courses) {
+            out += "  name: " + course.getTitle() + ", lvl: " + course.getLevel() + "\n";
+        }
+
+        out += " - Students:\n";
+
+        for (Student student : m_students) {
+            out += "  reg: " + student.getRegistration() + ", name: " + student.getName() + ", course: "
+                    + student.getCourse().getTitle() + "\n";
+        }
+
+        return out;
     }
 }

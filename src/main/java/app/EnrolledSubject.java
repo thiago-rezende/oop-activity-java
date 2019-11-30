@@ -37,7 +37,7 @@ public class EnrolledSubject implements Serializable {
     }
 
     /**
-     * Constructor (set to 0)
+     * Constructor (set grade to 0)
      * 
      * @param subject Subject
      */
@@ -45,6 +45,15 @@ public class EnrolledSubject implements Serializable {
         m_subject = subject;
         m_grade = 0;
         m_dateOfRegistration = LocalDate.now();
+    }
+
+    /**
+     * Add grade
+     * 
+     * @param grade Grade
+     */
+    public void addGrade(float grade) {
+        m_grade += grade;
     }
 
     /**
