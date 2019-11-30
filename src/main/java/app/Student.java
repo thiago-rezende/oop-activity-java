@@ -38,12 +38,32 @@ public class Student implements Serializable {
     /**
      * Complete constructor
      * 
-     * @param registration Registration numebr
+     * @param registration Registration number
      * @param name         Student name
      * @param course       Course
      */
     public Student(int registration, String name, Course course) {
         m_registration = registration;
+        m_name = name;
+        m_course = course;
+        m_enrolledSubjects = new ArrayList<EnrolledSubject>();
+
+        // Automatic subject enrollement
+        // for (Subject subject : m_course.getSubjects())
+        // m_enrolledSubjects.add(new EnrolledSubject(subject));
+
+        m_dateOfEntry = LocalDate.now();
+        m_dateOfCompletion = null;
+    }
+
+    /**
+     * Constructor
+     * 
+     * @param name   Student name
+     * @param course Course
+     */
+    public Student(String name, Course course) {
+        m_registration = 0;
         m_name = name;
         m_course = course;
         m_enrolledSubjects = new ArrayList<EnrolledSubject>();
