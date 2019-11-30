@@ -65,6 +65,31 @@ public class Student implements Serializable {
      */
 
     /**
+     * Add an EnrolledSubject
+     * 
+     * @param subject Subject to be added
+     */
+    public void addEnrolledSubject(Subject subject) {
+        m_enrolledSubjects.add(new EnrolledSubject(subject));
+    }
+
+    /**
+     * Remove an EnrolledSubject
+     * 
+     * @param subjectName Name of the subject to be removed
+     * @return boolean status
+     */
+    public boolean removeEnrolledSubject(String subjectName) {
+        for (int i = 0; i < m_enrolledSubjects.size(); i++)
+            if (m_enrolledSubjects.get(i).getSubject().getName().equals(subjectName)) {
+                m_enrolledSubjects.remove(i);
+                return true;
+            }
+
+        return false;
+    }
+
+    /**
      * Registration getter
      * 
      * @return int Registration number
@@ -132,7 +157,7 @@ public class Student implements Serializable {
      * 
      * @param enrolledSubjects EnrolledSubjects to set
      */
-    public void getEnrolledSubjects(List<EnrolledSubject> enrolledSubjects) {
+    public void setEnrolledSubjects(List<EnrolledSubject> enrolledSubjects) {
         m_enrolledSubjects = enrolledSubjects;
     }
 
@@ -193,6 +218,6 @@ public class Student implements Serializable {
     public String toString() {
         return "Student {Registration: " + m_registration + ", Name: " + this.getName() + ", Course: "
                 + this.getCourse() + ", Date of entry: " + this.getDateOfEntry() + ", Date of completion: "
-                + (this.getDateOfCompletion() != null ? "In Progress" : this.getDateOfCompletion()) + "}";
+                + (this.getDateOfCompletion() == null ? "In Progress" : this.getDateOfCompletion()) + "}";
     }
 }
