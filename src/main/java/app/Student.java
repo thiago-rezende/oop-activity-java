@@ -78,6 +78,22 @@ public class Student implements Serializable {
     }
 
     /**
+     * Student approval status getter
+     * 
+     * @return Approval status
+     */
+    public boolean getApprovalStatus() {
+        if (m_enrolledSubjects.size() < m_course.getSubjects().size())
+            return false;
+
+        for (EnrolledSubject subject : m_enrolledSubjects)
+            if (!subject.getApprovalStatus())
+                return false;
+
+        return true;
+    }
+
+    /**
      * Get academic performace coefficient
      * 
      * @return float academic performace coefficient

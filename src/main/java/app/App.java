@@ -370,7 +370,13 @@ public class App {
     }
 
     public static void courseReport() {
-
+        String message = " -- RELATORIO --\n";
+        for (Student student : App.school.getStudents()) {
+            if (student.getApprovalStatus())
+                message += " - " + student.getRegistration() + " " + student.getName() + " "
+                        + student.getCourse().getTitle();
+        }
+        JOptionPane.showMessageDialog(null, message, "Relatorio", JOptionPane.INFORMATION_MESSAGE);
     }
 
     public static void tryToLoad() {
