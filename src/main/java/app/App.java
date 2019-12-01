@@ -179,8 +179,47 @@ public class App {
 
     }
 
-    public static void studentStats() {
+    public static void studentsStats() {
+        String message = "Alunos:\n";
 
+        for (Student student : App.school.getStudents()) {
+            message += "\nNome: " + student.getName();
+            message += "\nMatricula: " + student.getRegistration();
+            message += "\nCurso: " + student.getCourse().getTitle();
+            message += "\nDisciplinas:";
+            for (Subject subject : student.getCourse().getSubjects()) {
+                message += subject.getName() + " ";
+            }
+            message += "\n";
+        }
+
+        JOptionPane.showMessageDialog(null, message, "Alunos", JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    public static void studentStats() {
+        Integer id;
+
+        try {
+            id = Integer
+                    .parseInt(JOptionPane.showInputDialog(null, "Digite o id do aluno:", JOptionPane.QUESTION_MESSAGE));
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        Student student = App.school.getStudents().get(id - 1);
+
+        String message = "Aluno:\n";
+        message += "\nNome: " + student.getName();
+        message += "\nMatricula: " + student.getRegistration();
+        message += "\nCurso: " + student.getCourse().getTitle();
+        message += "\nDisciplinas:";
+
+        for (Subject subject : student.getCourse().getSubjects()) {
+            message += subject.getName() + " " + subject.getPeriod() + "\n";
+        }
+
+        JOptionPane.showMessageDialog(null, message, "Alunos", JOptionPane.INFORMATION_MESSAGE);
     }
 
     public static void conclusionCertificate() throws IncompleteCourseException {
@@ -194,7 +233,7 @@ public class App {
             return;
         }
 
-        if (App.school.getStudents().get(id).getAcademicPerformanceCoefficient() > 60.0f)
+        if (App.school.getStudents().get(id - 1).getAcademicPerformanceCoefficient() > 60.0f)
             throw new IncompleteCourseException("O Aluno foi reprovado!");
 
         // Serialização do certificado
