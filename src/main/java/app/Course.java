@@ -9,8 +9,9 @@ import java.util.ArrayList;
  * 
  * @author Thiago Rezende
  */
-@SuppressWarnings("serial")
 public class Course implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private String m_title;
     private int m_level;

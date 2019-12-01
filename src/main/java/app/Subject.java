@@ -7,8 +7,9 @@ import java.io.Serializable;
  * 
  * @author Thiago Rezende
  */
-@SuppressWarnings("serial")
-public class Subject implements Serializable {
+public class Subject implements Serializable, Comparable<Subject> {
+
+    private static final long serialVersionUID = 1L;
 
     private String m_name;
     private int m_period;
@@ -88,6 +89,22 @@ public class Subject implements Serializable {
      */
     public void setValueInCredits(int valueInCredits) {
         m_valueInCredits = valueInCredits;
+    }
+
+    /**
+     * Compares an subject to another
+     * 
+     * @param other Subject to be compared
+     * @return Comparation result
+     */
+    @Override
+    public int compareTo(Subject other) {
+        if (this.getPeriod() > other.getPeriod())
+            return 1;
+        else if (this.getPeriod() < other.getPeriod())
+            return -1;
+        else
+            return 0;
     }
 
     /**

@@ -13,8 +13,9 @@ import java.time.LocalDate;
  * 
  * @author Thiago Rezende
  */
-@SuppressWarnings("serial")
 public class Student implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private int m_registration;
     private String m_name;

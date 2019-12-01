@@ -1,10 +1,13 @@
 package app;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import exceptions.NotFoundException;
 import exceptions.IncompleteCourseException;
+import java.io.*;
+import java.nio.charset.Charset;
 
 /**
  * Main application class
@@ -19,6 +22,9 @@ public class App {
      * @param args launch options
      */
     public static void main(String[] args) throws Exception {
+
+        tryToLoad();
+
         String menu = " -- " + App.school.getName() + " -- \n";
         menu += "1. Cadastrar curso\n";
         menu += "2. Matricular aluno\n";
@@ -74,10 +80,17 @@ public class App {
             }
         }
 
+        if (!App.school.getCourses().isEmpty())
+            tryToSave();
+
     }
 
     public static void registerCourse() {
         String title = JOptionPane.showInputDialog(null, "Nome do curso", "Nome", JOptionPane.QUESTION_MESSAGE);
+
+        if (title == null)
+            return;
+
         Integer level = 0;
 
         while (level != 1 && level != 2) {
@@ -176,67 +189,160 @@ public class App {
     }
 
     public static void enrollStudent() {
-
-    }
-
-    public static void studentsStats() {
-        String message = "Alunos:\n";
-
-        for (Student student : App.school.getStudents()) {
-            message += "\nNome: " + student.getName();
-            message += "\nMatricula: " + student.getRegistration();
-            message += "\nCurso: " + student.getCourse().getTitle();
-            message += "\nDisciplinas:";
-            for (Subject subject : student.getCourse().getSubjects()) {
-                message += subject.getName() + " ";
-            }
-            message += "\n";
+        Integer registration;
+        try {
+            registration = Integer.parseInt(JOptionPane.showInputDialog(null, "Numero de matricula", "Matricula",
+                    JOptionPane.QUESTION_MESSAGE));
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
+            return;
         }
 
-        JOptionPane.showMessageDialog(null, message, "Alunos", JOptionPane.INFORMATION_MESSAGE);
+        Student student;
+
+        try {
+            student = App.school.getStudent(registration);
+        } catch (NotFoundException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        if (student.getCourse().getSubjects().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Nao ha disciplinas no curso", "ERRO", JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
+
+        List<Subject> subjectsToEnroll = new ArrayList<>();
+
+        for (Subject subject : student.getCourse().getSubjects()) {
+            boolean found = false;
+
+            for (EnrolledSubject enrolled : student.getEnrolledSubjects())
+                if (subject.equals(enrolled.getSubject()))
+                    found = true;
+
+            if (!found)
+                subjectsToEnroll.add(subject);
+        }
+
+        if (subjectsToEnroll.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Matriculado em todas as disciplinas", "Matriculado",
+                    JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
+
+        String message = "Available subjects:";
+
+        for (int i = 0; i < subjectsToEnroll.size(); i++) {
+            message += "\n" + (i + 1) + ". " + subjectsToEnroll.get(i).getName();
+        }
+
+        Integer subjectID = 0;
+        while ((subjectID < 1 || subjectID > subjectsToEnroll.size())) {
+            try {
+                subjectID = Integer.parseInt(
+                        JOptionPane.showInputDialog(null, message, "Disciplinas", JOptionPane.QUESTION_MESSAGE));
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, e.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+        }
+
+        student.addEnrolledSubject(subjectsToEnroll.get(subjectID - 1));
+        JOptionPane.showMessageDialog(null, "Enrolled", "Status", JOptionPane.INFORMATION_MESSAGE);
     }
 
     public static void studentStats() {
-        Integer id;
-
+        Integer registration;
         try {
-            id = Integer
-                    .parseInt(JOptionPane.showInputDialog(null, "Digite o id do aluno:", JOptionPane.QUESTION_MESSAGE));
-        } catch (NumberFormatException e) {
+            registration = Integer.parseInt(JOptionPane.showInputDialog(null, "Numero de matricula", "Matricula",
+                    JOptionPane.QUESTION_MESSAGE));
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
-        Student student = App.school.getStudents().get(id - 1);
+        Student student;
 
-        String message = "Aluno:\n";
+        try {
+            student = App.school.getStudent(registration);
+        } catch (NotFoundException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        String message = "";
+
         message += "\nNome: " + student.getName();
         message += "\nMatricula: " + student.getRegistration();
         message += "\nCurso: " + student.getCourse().getTitle();
-        message += "\nDisciplinas:";
+        message += "\nDisciplinas por periodo:\n";
 
-        for (Subject subject : student.getCourse().getSubjects()) {
-            message += subject.getName() + " " + subject.getPeriod() + "\n";
+        EnrolledSubject[] enrolledSubjects = new EnrolledSubject[student.getEnrolledSubjects().size()];
+        for (int i = 0; i < enrolledSubjects.length; i++) {
+            enrolledSubjects[i] = student.getEnrolledSubjects().get(i);
         }
 
-        JOptionPane.showMessageDialog(null, message, "Alunos", JOptionPane.INFORMATION_MESSAGE);
+        Arrays.sort(enrolledSubjects);
+
+        for (EnrolledSubject subject : enrolledSubjects) {
+            message += " - " + subject.getSubject().getName() + " " + subject.getSubject().getPeriod() + " "
+                    + (subject.getApprovalStatus() ? "OK" : " ") + "\n";
+        }
+
+        Integer conclusionRatio = 0;
+        for (EnrolledSubject subject : enrolledSubjects)
+            if (subject.getApprovalStatus())
+                conclusionRatio++;
+
+        Float conclusionPercentage = (100.0f * conclusionRatio) / student.getCourse().getSubjects().size();
+
+        message += "Concluiu " + conclusionPercentage + "% do curso\n";
+        message += "Numero de disciplinas nao cursadas: "
+                + (student.getCourse().getSubjects().size() - student.getEnrolledSubjects().size()) + "\n";
+        JOptionPane.showMessageDialog(null, message, "Aluno", JOptionPane.INFORMATION_MESSAGE);
+
     }
 
-    public static void conclusionCertificate() throws IncompleteCourseException {
-        Integer id;
-
+    public static void conclusionCertificate() {
+        Integer registration;
         try {
-            id = Integer.parseInt(
-                    JOptionPane.showInputDialog(null, "Digite o id do aluno: ", JOptionPane.QUESTION_MESSAGE));
-        } catch (NumberFormatException e) {
+            registration = Integer.parseInt(JOptionPane.showInputDialog(null, "Numero de matricula", "Matricula",
+                    JOptionPane.QUESTION_MESSAGE));
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
-        if (App.school.getStudents().get(id - 1).getAcademicPerformanceCoefficient() > 60.0f)
-            throw new IncompleteCourseException("O Aluno foi reprovado!");
+        Student student;
 
-        // Serialização do certificado
+        try {
+            student = App.school.getStudent(registration);
+        } catch (NotFoundException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        String certificate = "";
+
+        try {
+            certificate = student.getCertificateOfCompletion();
+        } catch (IncompleteCourseException e) {
+            JOptionPane.showMessageDialog(null, "Curso Incompleto", "Incompleto", JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
+
+        FileOutputStream fileOut;
+
+        try {
+            fileOut = new FileOutputStream(student.getRegistration() + ".txt");
+            fileOut.write(certificate.getBytes(Charset.forName("UTF-8")));
+            fileOut.close();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
+        }
+
+        JOptionPane.showMessageDialog(null, certificate, "Certificate", JOptionPane.INFORMATION_MESSAGE);
     }
 
     public static void limitDate() {
@@ -247,32 +353,38 @@ public class App {
 
     }
 
-    public static void testSchool() {
-        Subject subject = new Subject("Introduction to Programming", 1, 5);
-        List<Subject> courseSubjects = new ArrayList<>();
-        courseSubjects.add(subject);
-        Course course = new Course("Computer Science", 2, courseSubjects, 4);
-        School school = new School("Horus Software University (HSU)");
-        school.addCourse(course);
-        Student student = new Student("Thiago Rezende", school.getCourses().get(0));
-        school.addStudent(student);
+    public static void tryToLoad() {
+        FileInputStream fileIn;
+        ObjectInputStream objIn;
 
         try {
-            student = school.getStudent(20191);
-            student.addEnrolledSubject(student.getCourse().getSubjects().get(0));
-        } catch (NotFoundException e) {
+            fileIn = new FileInputStream("school.ser");
+            objIn = new ObjectInputStream(fileIn);
+            App.school = (School) objIn.readObject();
+            fileIn.close();
+            objIn.close();
+        } catch (IOException e) {
             System.out.println(e.getMessage());
+        } catch (ClassNotFoundException c) {
+            JOptionPane.showMessageDialog(null, c.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
         }
+    }
 
-        student.getEnrolledSubjects().get(0).addGrade(100);
+    public static void tryToSave() {
+        FileOutputStream fileOut;
+        ObjectOutputStream objOut;
 
         try {
-            System.out.println(student.getCertificateOfCompletion());
-        } catch (IncompleteCourseException e) {
-            System.out.println(e.getMessage());
+            fileOut = new FileOutputStream("school.ser");
+            objOut = new ObjectOutputStream(fileOut);
+            objOut.writeObject(App.school);
+            fileOut.close();
+            objOut.close();
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
         }
 
-        System.out.println(student);
-        System.out.println(school);
+        JOptionPane.showMessageDialog(null, "Serializado no arquivo 'school.ser'", "INFO",
+                JOptionPane.INFORMATION_MESSAGE);
     }
 }
