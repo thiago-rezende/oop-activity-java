@@ -136,6 +136,24 @@ public class Course implements Serializable {
     }
 
     /**
+     * Course integration periods getter
+     * 
+     * @return the m_integrationPeriods
+     */
+    public int getIntegrationPeriods() {
+        return m_integrationPeriods;
+    }
+
+    /**
+     * Course integration periods setter
+     * 
+     * @param m_integrationPeriods the integrationPeriods to set
+     */
+    public void setIntegrationPeriods(int integrationPeriods) {
+        m_integrationPeriods = integrationPeriods;
+    }
+
+    /**
      * Equals
      * 
      * @param obj Object to compare
