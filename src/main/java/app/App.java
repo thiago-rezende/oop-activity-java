@@ -18,7 +18,7 @@ public class App {
     /**
      * @param args launch options
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         String menu = " -- " + App.school.getName() + " -- \n";
         menu += "1. Cadastrar curso\n";
         menu += "2. Matricular aluno\n";
@@ -183,8 +183,21 @@ public class App {
 
     }
 
-    public static void conclusionCertificate() {
+    public static void conclusionCertificate() throws IncompleteCourseException {
+        Integer id;
 
+        try {
+            id = Integer.parseInt(
+                    JOptionPane.showInputDialog(null, "Digite o id do aluno: ", JOptionPane.QUESTION_MESSAGE));
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        if (App.school.getStudents().get(id).getAcademicPerformanceCoefficient() > 60.0f)
+            throw new IncompleteCourseException("O Aluno foi reprovado!");
+
+        // Serialização do certificado
     }
 
     public static void limitDate() {
