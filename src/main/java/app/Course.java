@@ -148,7 +148,7 @@ public class Course implements Serializable {
     /**
      * Course integration periods setter
      * 
-     * @param m_integrationPeriods the integrationPeriods to set
+     * @param integrationPeriods the integrationPeriods to set
      */
     public void setIntegrationPeriods(int integrationPeriods) {
         m_integrationPeriods = integrationPeriods;

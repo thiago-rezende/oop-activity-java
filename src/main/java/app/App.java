@@ -22,7 +22,7 @@ public class App {
     /**
      * @param args launch options
      */
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
 
         tryToLoad();
 

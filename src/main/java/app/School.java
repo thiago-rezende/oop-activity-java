@@ -23,6 +23,8 @@ public class School implements Serializable {
 
     /**
      * Default constructor
+     * 
+     * @param name School name
      */
     public School(String name) {
         m_registartionCounter = 0;
@@ -124,7 +126,9 @@ public class School implements Serializable {
     /**
      * School Student getter
      * 
+     * @param registration Registration number
      * @return Student School student
+     * @throws NotFoundException when cannot find the student
      */
     public Student getStudent(int registration) throws NotFoundException {
         for (Student student : m_students)
