@@ -1,5 +1,6 @@
 package app;
 
+import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
@@ -346,7 +347,26 @@ public class App {
     }
 
     public static void limitDate() {
+        Integer registration;
+        try {
+            registration = Integer.parseInt(JOptionPane.showInputDialog(null, "Numero de matricula", "Matricula",
+                    JOptionPane.QUESTION_MESSAGE));
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
 
+        Student student;
+
+        try {
+            student = App.school.getStudent(registration);
+        } catch (NotFoundException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        LocalDate date = student.getDateOfEntry().plusYears(8);
+        JOptionPane.showMessageDialog(null, "Data limite: " + date, "Limite", JOptionPane.INFORMATION_MESSAGE);
     }
 
     public static void courseReport() {
