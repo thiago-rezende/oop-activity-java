@@ -9,8 +9,9 @@ import java.util.ArrayList;
  * 
  * @author Thiago Rezende
  */
-@SuppressWarnings("serial")
 public class Course implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private String m_title;
     private int m_level;
@@ -133,6 +134,24 @@ public class Course implements Serializable {
      */
     public void setSubjects(List<Subject> subjects) {
         m_subjects = subjects;
+    }
+
+    /**
+     * Course integration periods getter
+     * 
+     * @return the m_integrationPeriods
+     */
+    public int getIntegrationPeriods() {
+        return m_integrationPeriods;
+    }
+
+    /**
+     * Course integration periods setter
+     * 
+     * @param integrationPeriods the integrationPeriods to set
+     */
+    public void setIntegrationPeriods(int integrationPeriods) {
+        m_integrationPeriods = integrationPeriods;
     }
 
     /**

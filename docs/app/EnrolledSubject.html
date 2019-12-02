@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -107,13 +107,13 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd>java.io.Serializable</dd>
+<dd>java.io.Serializable, java.lang.Comparable&lt;<a href="../app/EnrolledSubject.html" title="class in app">EnrolledSubject</a>&gt;</dd>
 </dl>
 <hr>
 <br>
 <pre>public class <span class="typeNameLabel">EnrolledSubject</span>
 extends java.lang.Object
-implements java.io.Serializable</pre>
+implements java.io.Serializable, java.lang.Comparable&lt;<a href="../app/EnrolledSubject.html" title="class in app">EnrolledSubject</a>&gt;</pre>
 <div class="block">EnrolledSubject</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
@@ -143,7 +143,7 @@ implements java.io.Serializable</pre>
 </tr>
 <tr class="rowColor">
 <td class="colOne"><code><span class="memberNameLink"><a href="../app/EnrolledSubject.html#EnrolledSubject-app.Subject-">EnrolledSubject</a></span>(<a href="../app/Subject.html" title="class in app">Subject</a>&nbsp;subject)</code>
-<div class="block">Constructor (set to 0)</div>
+<div class="block">Constructor (set grade to 0)</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -168,54 +168,66 @@ implements java.io.Serializable</pre>
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../app/EnrolledSubject.html#addGrade-float-">addGrade</a></span>(float&nbsp;grade)</code>
+<div class="block">Add grade</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../app/EnrolledSubject.html#compareTo-app.EnrolledSubject-">compareTo</a></span>(<a href="../app/EnrolledSubject.html" title="class in app">EnrolledSubject</a>&nbsp;other)</code>
+<div class="block">Compares an EnrolledSubject to another</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../app/EnrolledSubject.html#equals-java.lang.Object-">equals</a></span>(java.lang.Object&nbsp;obj)</code>
 <div class="block">Equals</div>
 </td>
 </tr>
-<tr id="i1" class="rowColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../app/EnrolledSubject.html#getApprovalStatus--">getApprovalStatus</a></span>()</code>
 <div class="block">Approval status</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>java.time.LocalDate</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../app/EnrolledSubject.html#getDateOfRegistration--">getDateOfRegistration</a></span>()</code>
 <div class="block">Date of registration getter</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>float</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../app/EnrolledSubject.html#getGrade--">getGrade</a></span>()</code>
 <div class="block">Grade getter</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code><a href="../app/Subject.html" title="class in app">Subject</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../app/EnrolledSubject.html#getSubject--">getSubject</a></span>()</code>
 <div class="block">Subject getter</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../app/EnrolledSubject.html#setDateOfRegistration-java.time.LocalDate-">setDateOfRegistration</a></span>(java.time.LocalDate&nbsp;dateOfRegistration)</code>
 <div class="block">Date of registration setter</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../app/EnrolledSubject.html#setGrade-int-">setGrade</a></span>(int&nbsp;grade)</code>
 <div class="block">Grade setter</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../app/EnrolledSubject.html#setSubject-app.Subject-">setSubject</a></span>(<a href="../app/Subject.html" title="class in app">Subject</a>&nbsp;subject)</code>
 <div class="block">Subject setter</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../app/EnrolledSubject.html#toString--">toString</a></span>()</code>
 <div class="block">To string</div>
@@ -276,7 +288,7 @@ implements java.io.Serializable</pre>
 <li class="blockList">
 <h4>EnrolledSubject</h4>
 <pre>public&nbsp;EnrolledSubject(<a href="../app/Subject.html" title="class in app">Subject</a>&nbsp;subject)</pre>
-<div class="block">Constructor (set to 0)</div>
+<div class="block">Constructor (set grade to 0)</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>subject</code> - Subject</dd>
@@ -291,6 +303,20 @@ implements java.io.Serializable</pre>
 <!--   -->
 </a>
 <h3>Method Detail</h3>
+<a name="addGrade-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addGrade</h4>
+<pre>public&nbsp;void&nbsp;addGrade(float&nbsp;grade)</pre>
+<div class="block">Add grade</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>grade</code> - Grade</dd>
+</dl>
+</li>
+</ul>
 <a name="getApprovalStatus--">
 <!--   -->
 </a>
@@ -386,6 +412,24 @@ implements java.io.Serializable</pre>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>dateOfRegistration</code> - Date to set</dd>
+</dl>
+</li>
+</ul>
+<a name="compareTo-app.EnrolledSubject-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>compareTo</h4>
+<pre>public&nbsp;int&nbsp;compareTo(<a href="../app/EnrolledSubject.html" title="class in app">EnrolledSubject</a>&nbsp;other)</pre>
+<div class="block">Compares an EnrolledSubject to another</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code>compareTo</code>&nbsp;in interface&nbsp;<code>java.lang.Comparable&lt;<a href="../app/EnrolledSubject.html" title="class in app">EnrolledSubject</a>&gt;</code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>other</code> - EnrolledSubject to be compared</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Comparation result</dd>
 </dl>
 </li>
 </ul>

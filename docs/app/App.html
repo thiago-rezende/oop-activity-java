@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":9};
+var methods = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -73,13 +73,13 @@ var activeTableTab = "activeTableTab";
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
@@ -109,12 +109,32 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public class <span class="typeNameLabel">App</span>
 extends java.lang.Object</pre>
+<div class="block">Main application class</div>
 </li>
 </ul>
 </div>
 <div class="summary">
 <ul class="blockList">
 <li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static <a href="../app/School.html" title="class in app">School</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../app/App.html#school">school</a></span></code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <ul class="blockList">
 <li class="blockList"><a name="constructor.summary">
@@ -146,7 +166,43 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>static void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../app/App.html#conclusionCertificate--">conclusionCertificate</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>static void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../app/App.html#courseReport--">courseReport</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>static void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../app/App.html#enrollStudent--">enrollStudent</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>static void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../app/App.html#limitDate--">limitDate</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>static void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../app/App.html#main-java.lang.String:A-">main</a></span>(java.lang.String[]&nbsp;args)</code>&nbsp;</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>static void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../app/App.html#registerCourse--">registerCourse</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>static void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../app/App.html#registerStudent--">registerStudent</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>static void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../app/App.html#studentStats--">studentStats</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>static void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../app/App.html#tryToLoad--">tryToLoad</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>static void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../app/App.html#tryToSave--">tryToSave</a></span>()</code>&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -164,6 +220,23 @@ extends java.lang.Object</pre>
 <div class="details">
 <ul class="blockList">
 <li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="school">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>school</h4>
+<pre>public static&nbsp;<a href="../app/School.html" title="class in app">School</a> school</pre>
+</li>
+</ul>
+</li>
+</ul>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <ul class="blockList">
 <li class="blockList"><a name="constructor.detail">
@@ -190,7 +263,7 @@ extends java.lang.Object</pre>
 <a name="main-java.lang.String:A-">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>main</h4>
 <pre>public static&nbsp;void&nbsp;main(java.lang.String[]&nbsp;args)</pre>
@@ -198,6 +271,87 @@ extends java.lang.Object</pre>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>args</code> - launch options</dd>
 </dl>
+</li>
+</ul>
+<a name="registerCourse--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>registerCourse</h4>
+<pre>public static&nbsp;void&nbsp;registerCourse()</pre>
+</li>
+</ul>
+<a name="registerStudent--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>registerStudent</h4>
+<pre>public static&nbsp;void&nbsp;registerStudent()</pre>
+</li>
+</ul>
+<a name="enrollStudent--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>enrollStudent</h4>
+<pre>public static&nbsp;void&nbsp;enrollStudent()</pre>
+</li>
+</ul>
+<a name="studentStats--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>studentStats</h4>
+<pre>public static&nbsp;void&nbsp;studentStats()</pre>
+</li>
+</ul>
+<a name="conclusionCertificate--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>conclusionCertificate</h4>
+<pre>public static&nbsp;void&nbsp;conclusionCertificate()</pre>
+</li>
+</ul>
+<a name="limitDate--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>limitDate</h4>
+<pre>public static&nbsp;void&nbsp;limitDate()</pre>
+</li>
+</ul>
+<a name="courseReport--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>courseReport</h4>
+<pre>public static&nbsp;void&nbsp;courseReport()</pre>
+</li>
+</ul>
+<a name="tryToLoad--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>tryToLoad</h4>
+<pre>public static&nbsp;void&nbsp;tryToLoad()</pre>
+</li>
+</ul>
+<a name="tryToSave--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>tryToSave</h4>
+<pre>public static&nbsp;void&nbsp;tryToSave()</pre>
 </li>
 </ul>
 </li>
@@ -253,13 +407,13 @@ extends java.lang.Object</pre>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>

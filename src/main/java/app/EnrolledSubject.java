@@ -8,8 +8,9 @@ import java.time.LocalDate;
  * 
  * @author Thiago Rezende
  */
-@SuppressWarnings("serial")
-public class EnrolledSubject implements Serializable {
+public class EnrolledSubject implements Serializable, Comparable<EnrolledSubject> {
+
+    private static final long serialVersionUID = 1L;
 
     private Subject m_subject;
     private float m_grade;
@@ -117,6 +118,17 @@ public class EnrolledSubject implements Serializable {
      */
     public void setDateOfRegistration(LocalDate dateOfRegistration) {
         m_dateOfRegistration = dateOfRegistration;
+    }
+
+    /**
+     * Compares an EnrolledSubject to another
+     * 
+     * @param other EnrolledSubject to be compared
+     * @return Comparation result
+     */
+    @Override
+    public int compareTo(EnrolledSubject other) {
+        return this.getSubject().compareTo(other.getSubject());
     }
 
     /**

@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -73,13 +73,13 @@ var activeTableTab = "activeTableTab";
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
 <li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
@@ -125,25 +125,6 @@ implements java.io.Serializable</pre>
 <div class="summary">
 <ul class="blockList">
 <li class="blockList">
-<!-- =========== FIELD SUMMARY =========== -->
-<ul class="blockList">
-<li class="blockList"><a name="field.summary">
-<!--   -->
-</a>
-<h3>Field Summary</h3>
-<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
-<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
-<tr>
-<th class="colFirst" scope="col">Modifier and Type</th>
-<th class="colLast" scope="col">Field and Description</th>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>int</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../app/School.html#m_registartionCounter">m_registartionCounter</a></span></code>&nbsp;</td>
-</tr>
-</table>
-</li>
-</ul>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <ul class="blockList">
 <li class="blockList"><a name="constructor.summary">
@@ -156,7 +137,7 @@ implements java.io.Serializable</pre>
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../app/School.html#School--">School</a></span>()</code>
+<td class="colOne"><code><span class="memberNameLink"><a href="../app/School.html#School-java.lang.String-">School</a></span>(java.lang.String&nbsp;name)</code>
 <div class="block">Default constructor</div>
 </td>
 </tr>
@@ -194,35 +175,57 @@ implements java.io.Serializable</pre>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../app/School.html#getName--">getName</a></span>()</code>
+<div class="block">School name getter</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code><a href="../app/Student.html" title="class in app">Student</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../app/School.html#getStudent-int-">getStudent</a></span>(int&nbsp;registration)</code>
+<div class="block">School Student getter</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>java.util.List&lt;<a href="../app/Student.html" title="class in app">Student</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../app/School.html#getStudents--">getStudents</a></span>()</code>
 <div class="block">School Students getter</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../app/School.html#removeCourse-java.lang.String-int-">removeCourse</a></span>(java.lang.String&nbsp;courseTitle,
             int&nbsp;courseLevel)</code>
 <div class="block">Remove a course</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../app/School.html#removeStudent-int-">removeStudent</a></span>(int&nbsp;registration)</code>
 <div class="block">Remove a student</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../app/School.html#setCourses-java.util.List-">setCourses</a></span>(java.util.List&lt;<a href="../app/Course.html" title="class in app">Course</a>&gt;&nbsp;courses)</code>
 <div class="block">School courses setter</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../app/School.html#setName-java.lang.String-">setName</a></span>(java.lang.String&nbsp;name)</code>
+<div class="block">School name setter</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../app/School.html#setStudents-java.util.List-">setStudents</a></span>(java.util.List&lt;<a href="../app/Student.html" title="class in app">Student</a>&gt;&nbsp;students)</code>
 <div class="block">School students setter</div>
 </td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../app/School.html#toString--">toString</a></span>()</code>&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -230,7 +233,7 @@ implements java.io.Serializable</pre>
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;java.lang.Object</h3>
-<code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</code></li>
+<code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, wait, wait, wait</code></li>
 </ul>
 </li>
 </ul>
@@ -240,37 +243,24 @@ implements java.io.Serializable</pre>
 <div class="details">
 <ul class="blockList">
 <li class="blockList">
-<!-- ============ FIELD DETAIL =========== -->
-<ul class="blockList">
-<li class="blockList"><a name="field.detail">
-<!--   -->
-</a>
-<h3>Field Detail</h3>
-<a name="m_registartionCounter">
-<!--   -->
-</a>
-<ul class="blockListLast">
-<li class="blockList">
-<h4>m_registartionCounter</h4>
-<pre>public&nbsp;int m_registartionCounter</pre>
-</li>
-</ul>
-</li>
-</ul>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <ul class="blockList">
 <li class="blockList"><a name="constructor.detail">
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a name="School--">
+<a name="School-java.lang.String-">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>School</h4>
-<pre>public&nbsp;School()</pre>
+<pre>public&nbsp;School(java.lang.String&nbsp;name)</pre>
 <div class="block">Default constructor</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>name</code> - School name</dd>
+</dl>
 </li>
 </ul>
 </li>
@@ -343,6 +333,34 @@ implements java.io.Serializable</pre>
 </dl>
 </li>
 </ul>
+<a name="getName--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getName</h4>
+<pre>public&nbsp;java.lang.String&nbsp;getName()</pre>
+<div class="block">School name getter</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>String School name</dd>
+</dl>
+</li>
+</ul>
+<a name="setName-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setName</h4>
+<pre>public&nbsp;void&nbsp;setName(java.lang.String&nbsp;name)</pre>
+<div class="block">School name setter</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>name</code> - School name</dd>
+</dl>
+</li>
+</ul>
 <a name="getCourses--">
 <!--   -->
 </a>
@@ -371,6 +389,26 @@ implements java.io.Serializable</pre>
 </dl>
 </li>
 </ul>
+<a name="getStudent-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getStudent</h4>
+<pre>public&nbsp;<a href="../app/Student.html" title="class in app">Student</a>&nbsp;getStudent(int&nbsp;registration)
+                   throws <a href="../exceptions/NotFoundException.html" title="class in exceptions">NotFoundException</a></pre>
+<div class="block">School Student getter</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>registration</code> - Registration number</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Student School student</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>NotFoundExeption</code> - when cannot find the student</dd>
+<dd><code><a href="../exceptions/NotFoundException.html" title="class in exceptions">NotFoundException</a></code></dd>
+</dl>
+</li>
+</ul>
 <a name="getStudents--">
 <!--   -->
 </a>
@@ -388,7 +426,7 @@ implements java.io.Serializable</pre>
 <a name="setStudents-java.util.List-">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>setStudents</h4>
 <pre>public&nbsp;void&nbsp;setStudents(java.util.List&lt;<a href="../app/Student.html" title="class in app">Student</a>&gt;&nbsp;students)</pre>
@@ -396,6 +434,19 @@ implements java.io.Serializable</pre>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>students</code> - Students to set</dd>
+</dl>
+</li>
+</ul>
+<a name="toString--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>toString</h4>
+<pre>public&nbsp;java.lang.String&nbsp;toString()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code>toString</code>&nbsp;in class&nbsp;<code>java.lang.Object</code></dd>
 </dl>
 </li>
 </ul>
@@ -452,13 +503,13 @@ implements java.io.Serializable</pre>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
 <li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>

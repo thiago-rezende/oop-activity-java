@@ -6,3 +6,6 @@ build
 
 # Ignore Gradle generated binary files
 bin
+
+#VSCode
+.vscode/settings.json

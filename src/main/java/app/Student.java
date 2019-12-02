@@ -13,8 +13,9 @@ import java.time.LocalDate;
  * 
  * @author Thiago Rezende
  */
-@SuppressWarnings("serial")
 public class Student implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private int m_registration;
     private String m_name;
@@ -74,6 +75,22 @@ public class Student implements Serializable {
 
         m_dateOfEntry = LocalDate.now();
         m_dateOfCompletion = null;
+    }
+
+    /**
+     * Student approval status getter
+     * 
+     * @return Approval status
+     */
+    public boolean getApprovalStatus() {
+        if (m_enrolledSubjects.size() < m_course.getSubjects().size())
+            return false;
+
+        for (EnrolledSubject subject : m_enrolledSubjects)
+            if (!subject.getApprovalStatus())
+                return false;
+
+        return true;
     }
 
     /**
