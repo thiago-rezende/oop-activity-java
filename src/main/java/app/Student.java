@@ -127,7 +127,7 @@ public class Student implements Serializable {
 
         this.setDateOfCompletion(LocalDate.now());
 
-        return "Cetificate of Conclusion\n" + "We certify that" + this.getName() + " has completed the course of "
+        return "Cetificate of Conclusion\n" + "We certify that " + this.getName() + " has completed the course of "
                 + this.getCourse().getTitle() + " on " + this.getDateOfCompletion();
     }
 
