@@ -145,7 +145,7 @@ public class App {
         Course course = new Course(title, level, subjects, integrationPeriods);
         App.school.addCourse(course);
         String message = "Titulo: " + course.getTitle();
-        message += "\nNviel: " + (course.getLevel() == 1 ? "Tecnico" : "Superior");
+        message += "\nNivel: " + (course.getLevel() == 1 ? "Tecnico" : "Superior");
         message += "\nDisciplinas: " + course.getSubjects().size();
         for (Subject subject : course.getSubjects())
             message += "\n - Nome: " + subject.getName() + " Periodo: " + subject.getPeriod();
